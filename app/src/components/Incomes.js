@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import IncomeDelete from './IncomeDelete'
 import axios from 'axios'
 
+
 class Incomes extends Component {
     constructor(){
         super()
