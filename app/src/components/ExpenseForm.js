@@ -38,6 +38,7 @@ class ExpenseForm extends Component {
             .then(res =>
                 console.log(res.data)
             )
+            .then(window.location.reload())
 
         this.setState({
             amount: '',
