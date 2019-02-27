@@ -16,15 +16,21 @@ class Expenses extends Component {
   }
 
   componentDidMount(){
-    fetch('http://127.0.0.1:8000/expenses/')
-    .then(res=>res.json())
-    .then(data=>{
-      this.setState({
-        expenses: data
-      })
-    })
+ this.seeList();
+ 
   }
+  seeList=()=>{
+     axios.get('http://127.0.0.1:8000/expenses/')
+    .then(res => this.setState({ expenses: res.data }))
+       .catch(err => (console.log(err)))
+  }
+
+
+
+
   render() {
+
+   
     const expenseList= this.state.expenses.map(expense=>(
       <div className="expense_list_item" key={expense.id}>
       <h3>{expense.title}</h3>
