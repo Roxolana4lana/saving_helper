@@ -46,12 +46,13 @@ class ExpenseForm extends Component {
             title: '',
             regular: true
         })
+           
     }
 
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='formExpenses'>
 
                 <div className="form-group">
                     <label>Title of expenses:  </label>
@@ -84,14 +85,15 @@ class ExpenseForm extends Component {
                 <div className="form-group">
                     <label>Mounthly or not </label>
                     <input type="checkbox"
-                        className="form-control"
                         name="regular"
                         checked={this.state.regular}
                         onChange={this.onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <input type="submit" value="Save the changes" className="btn btn-primary" />
+                  
+                    <input type="submit" value="Save the changes" className="btn-save"
+                     />
                 </div>
             </form>
         )
