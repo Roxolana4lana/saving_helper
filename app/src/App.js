@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar'
-import Expenses from './components/expenses'
+import Expenses from './components/Expenses'
 import ExpenseOne from './components/ExpenseOne';
 import Drafty from './components/Drafty'
 import Incomes from './components/Incomes'
