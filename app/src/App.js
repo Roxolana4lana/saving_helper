@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar'
+import Expenses from './components/expenses'
+import ExpenseOne from './components/ExpenseOne';
+import Drafty from './components/Drafty'
+import Incomes from './components/Incomes'
+import IncomeOne from './components/IncomeOne';
+import './output.css'
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <BrowserRouter>
+      <div className="AppMain">
+      <Navbar />
+      <Route exact path='/' component={Expenses}></Route>
+     <Route path='/a:exact' component={ExpenseOne}></Route>
+     <Route path='/draft' component={Drafty}></Route>
+     <Route exact path='/incomes' component={Incomes}></Route>
+     <Route path='/profit:one' component={IncomeOne}></Route>
+   
+
       </div>
+      </BrowserRouter>
     );
   }
 }

@@ -15,11 +15,13 @@ class ExpenseForm extends Component {
 
 
     onChange = e => {
-        const { name, value, type, checked } = e.target
-        type === "checkbox" ? this.setState({ [name]: checked }) :
-            this.setState({
-                [name]: value
-            });
+        // const { name, value, type, checked } = e.target
+        // type === "checkbox" ? this.setState({ [name]: checked }) :
+        //     this.setState({
+        //         [name]: value
+        //     });
+        e.target.type==='checkbox'?this.setState({[e.target.name]:e.target.checked}):
+    this.setState({[e.target.name]: e.target.value})
     }
 
 
@@ -36,6 +38,7 @@ class ExpenseForm extends Component {
             .then(res =>
                 console.log(res.data)
             )
+            .then(window.location.reload())
 
         this.setState({
             amount: '',
@@ -43,12 +46,13 @@ class ExpenseForm extends Component {
             title: '',
             regular: true
         })
+           
     }
 
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='formExpenses'>
 
                 <div className="form-group">
                     <label>Title of expenses:  </label>
@@ -81,14 +85,15 @@ class ExpenseForm extends Component {
                 <div className="form-group">
                     <label>Mounthly or not </label>
                     <input type="checkbox"
-                        className="form-control"
                         name="regular"
                         checked={this.state.regular}
                         onChange={this.onChange}
                     />
                 </div>
                 <div className="form-group">
-                    <input type="submit" value="Save the changes" className="btn btn-primary" />
+                  
+                    <input type="submit" value="Save the changes" className="btn-save"
+                     />
                 </div>
             </form>
         )
