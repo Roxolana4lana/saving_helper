@@ -13,17 +13,10 @@ class ExpenseForm extends Component {
         }
     }
 
-
     onChange = e => {
-        // const { name, value, type, checked } = e.target
-        // type === "checkbox" ? this.setState({ [name]: checked }) :
-        //     this.setState({
-        //         [name]: value
-        //     });
         e.target.type==='checkbox'?this.setState({[e.target.name]:e.target.checked}):
     this.setState({[e.target.name]: e.target.value})
     }
-
 
     handleSubmit = event => {
         event.preventDefault();
@@ -34,6 +27,7 @@ class ExpenseForm extends Component {
             amount: this.state.amount,
             regular: this.state.regular
         };
+
         axios.post(`http://127.0.0.1:8000/expenses/`, obj)
             .then(res =>
                 console.log(res.data)
@@ -45,15 +39,13 @@ class ExpenseForm extends Component {
             category: '',
             title: '',
             regular: true
-        })
-           
+        })      
     }
 
 
     render() {
         return (
             <form onSubmit={this.handleSubmit} className='formExpenses'>
-
                 <div className="form-group">
                     <label>Title of expenses:  </label>
                     <input
