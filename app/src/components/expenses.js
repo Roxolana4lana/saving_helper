@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom'
 import ExpDelete from './ExpDelete';
 import axios from 'axios'
 
+//<ExpDelete id={expense.id} smth={this.handleChange} />
 
 class Expenses extends Component {
   constructor(){
     super()
     this.state={
       expenses:[]
+      
     }
   }
+
   componentDidMount(){
     fetch('http://127.0.0.1:8000/expenses/')
     .then(res=>res.json())
