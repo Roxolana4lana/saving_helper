@@ -15,11 +15,13 @@ class ExpenseForm extends Component {
 
 
     onChange = e => {
-        const { name, value, type, checked } = e.target
-        type === "checkbox" ? this.setState({ [name]: checked }) :
-            this.setState({
-                [name]: value
-            });
+        // const { name, value, type, checked } = e.target
+        // type === "checkbox" ? this.setState({ [name]: checked }) :
+        //     this.setState({
+        //         [name]: value
+        //     });
+        e.target.type==='checkbox'?this.setState({[e.target.name]:e.target.checked}):
+    this.setState({[e.target.name]: e.target.value})
     }
 
 
