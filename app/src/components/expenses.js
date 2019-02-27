@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ExpenseForm from './ExpenseForm'
 import { Link } from 'react-router-dom'
-import ExpenseDelete from './ExpDelete';
+import ExpenseDelete from './ExpenseDelete';
 import axios from 'axios'
 
 
