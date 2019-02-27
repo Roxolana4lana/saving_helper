@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // Step 2 - Including the react-fusioncharts component
 import ReactFC from 'react-fusioncharts';
@@ -28,7 +27,7 @@ class Drafty extends React.Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         fetch('http://127.0.0.1:8000/expenses/')
             .then(res => res.json())
             .then(data => {

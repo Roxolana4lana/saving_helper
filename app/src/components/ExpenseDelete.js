@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 
- class ExpDelete extends Component {
+ class ExpenseDelete extends Component {
    constructor() {
      super()
      this.state = {
@@ -24,19 +24,13 @@ import axios from 'axios';
             }
    
   
-   
-   //   <i class="material-icons" onClick={this.handleChange}>delete</i>
-  render() {
-     
- 
-    return (
-        
+  render() {  
+    return (     
       <div>
-        <i className="material-icons" style={{ color: 'white', cursor: 'pointer' }} onClick={this.handleChange}>delete</i>
-
+        <i className="material-icons" style={{color: 'white', cursor: 'pointer'}}
+           onClick={this.handleChange}>delete</i>
       </div>
     )
   }
 }
-
-export default ExpDelete 
+export default ExpenseDelete 

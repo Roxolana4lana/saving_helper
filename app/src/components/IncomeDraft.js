@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // Step 2 - Including the react-fusioncharts component
 import ReactFC from 'react-fusioncharts';
@@ -24,11 +23,10 @@ class IncomeDraft extends React.Component {
         super()
         this.state = {
             incomes: []
-
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         fetch('http://127.0.0.1:8000/incomes/')
             .then(res => res.json())
             .then(data => {
@@ -37,6 +35,7 @@ class IncomeDraft extends React.Component {
                 })
             })
     }
+    
     render() {
         const dataArr = this.state.incomes.map((income) => {
             return {
