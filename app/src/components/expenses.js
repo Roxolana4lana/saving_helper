@@ -32,19 +32,30 @@ class Expenses extends Component {
 
    
     const expenseList= this.state.expenses.map(expense=>(
-      <div className="expense_list_item" key={expense.id}>
-      <h3>{expense.title}</h3>
-      </div>
+    
+       
+          <div className="list" key={expense.id}>
+        <div className="element_list">
+          <Link to={'/a' + expense.id} className="link_expense" >
+          <span >{expense.title}</span>
+            
+        </Link>
+         
+       <ExpDelete id={expense.id}  />
+        </div>
+        </div>
+        
     ))
     return (
       <div className='App'>
-      <div className="App__Expenses">
-      <h1>List of expenses</h1>
-      <div className="expenses_lising">
+    
+    
+      <div className="split expenses_lising">
+      <h1>Expenses</h1>
       {expenseList}
         </div>
-        </div>
-        <div className="App_Form">
+   
+        <div className="split App_Form">
         <ExpenseForm/>
         </div>
      
